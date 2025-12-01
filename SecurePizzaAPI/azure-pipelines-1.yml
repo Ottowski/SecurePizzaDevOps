@@ -21,20 +21,20 @@ steps:
     version: '10.0.x'  # Use .NET 10 SDK
   displayName: 'Install .NET 10 SDK'
 
-# 4️⃣ Restore NuGet packages
-- script: dotnet restore SecurePizzaAPI.csproj
+# Restore NuGet packages
+- script: dotnet restore SecurePizzaAPI/SecurePizzaAPI.csproj
   displayName: 'Restore NuGet packages'
 
-# 5️⃣ Build the main project
-- script: dotnet build SecurePizzaAPI.csproj --configuration Release
+# Build the main project
+- script: dotnet build SecurePizzaAPI/SecurePizzaAPI.csproj --configuration Release
   displayName: 'Build main project'
 
-# 6️⃣ Run unit tests
+# Run unit tests
 - script: dotnet test SecurePizzaAPI.Tests/SecurePizzaAPI.Tests.csproj --configuration Release --no-build --verbosity normal
   displayName: 'Run unit tests for SecurePizzaAPI.Tests'
 
-# 7️⃣ Publish app for Docker
-- script: dotnet publish SecurePizzaAPI.csproj --configuration Release --output $(Build.ArtifactStagingDirectory)/publish
+# Publish app for Docker
+- script: dotnet publish SecurePizzaAPI/SecurePizzaAPI.csproj --configuration Release --output $(Build.ArtifactStagingDirectory)/publish
   displayName: 'Publish app for Docker'
 
 # 8️⃣ SCA: Scan Docker image for vulnerabilities (example with Trivy)
