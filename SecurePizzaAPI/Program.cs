@@ -1,19 +1,22 @@
 ﻿var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
+// Listen to port 8080 in container.
+builder.WebHost.UseUrls("http://0.0.0.0:80");
 builder.Services.AddApplicationInsightsTelemetry();
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
-builder.Services.AddEndpointsApiExplorer(); // ✅ OpenAPI/Swagger support
-builder.Services.AddSwaggerGen();           // ✅ Swagger generator
+builder.Services.AddEndpointsApiExplorer(); // OpenAPI/Swagger support
+builder.Services.AddSwaggerGen();           // Swagger generator
 
 var app = builder.Build();
-// Configure the HTTP request pipeline
-if (app.Environment.IsDevelopment())
+
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();        // genererar /swagger/v1/swagger.json
-    app.UseSwaggerUI();      // Swagger UI på /swagger
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "SecurePizzaAPI V1");
+    c.RoutePrefix = string.Empty; // Swagger to root 
+});
 
 app.UseHttpsRedirection();
 
