@@ -3,18 +3,18 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-# 1️⃣ Trigger pipeline on pushes to main branch
+# Trigger pipeline on pushes to main branch
 trigger:
 - main
 
-# 2️⃣ Define agent pool
+# Define agent pool
 pool:
   vmImage: ubuntu-latest
 
-# 3️⃣ Steps
+# Steps
 steps:
 
-# 3️⃣ Install .NET 10 SDK
+# Install .NET 10 SDK
 - task: UseDotNet@2
   inputs:
     packageType: 'sdk'
@@ -37,14 +37,14 @@ steps:
 - script: dotnet publish SecurePizzaAPI/SecurePizzaAPI.csproj --configuration Release --output $(Build.ArtifactStagingDirectory)/publish
   displayName: 'Publish app for Docker'
 
-# 8️⃣ SCA: Scan Docker image for vulnerabilities (example with Trivy)
+# SCA: Scan Docker image for vulnerabilities (example with Trivy)
 - task: Trivy@1
   inputs:
-    imageName: 'ottowski/securepizzaapi:1.0'
+    image: 'ottowski/securepizzaapi:1.0'
     format: 'table'
   displayName: 'Scan Docker image for vulnerabilities (SCA)'
 
-# 9️⃣ Docker: Build and push image to Docker Hub
+# Docker: Build and push image to Docker Hub
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerServiceConnection'  # This matches your service connection name
