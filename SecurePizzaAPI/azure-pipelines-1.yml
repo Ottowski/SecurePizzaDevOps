@@ -3,33 +3,48 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-# Trigger pipeline on pushes to main branch
+# 1️⃣ Trigger pipeline on pushes to main branch
 trigger:
 - main
 
-# Define agent pool
+# 2️⃣ Define agent pool
 pool:
   vmImage: ubuntu-latest
 
-# Steps
+# 3️⃣ Steps
 steps:
 
-# 1️⃣ Install .NET 10 SDK
+# 3️⃣ Install .NET 10 SDK
 - task: UseDotNet@2
   inputs:
     packageType: 'sdk'
     version: '10.0.x'  # Use .NET 10 SDK
   displayName: 'Install .NET 10 SDK'
 
-# 2️⃣ Restore NuGet packages
+# 4️⃣ Restore NuGet packages
 - script: dotnet restore SecurePizzaAPI.csproj
   displayName: 'Restore NuGet packages'
 
-# 3️⃣ Build the main project
+# 5️⃣ Build the main project
 - script: dotnet build SecurePizzaAPI.csproj --configuration Release
   displayName: 'Build main project'
 
-# 4️⃣ Docker: Build and push image
+# 6️⃣ Run unit tests
+- script: dotnet test SecurePizzaAPI.Tests/SecurePizzaAPI.Tests.csproj --configuration Release --no-build --verbosity normal
+  displayName: 'Run unit tests for SecurePizzaAPI.Tests'
+
+# 7️⃣ Publish app for Docker
+- script: dotnet publish SecurePizzaAPI.csproj --configuration Release --output $(Build.ArtifactStagingDirectory)/publish
+  displayName: 'Publish app for Docker'
+
+# 8️⃣ SCA: Scan Docker image for vulnerabilities (example with Trivy)
+- task: Trivy@1
+  inputs:
+    imageName: 'ottowski/securepizzaapi:1.0'
+    format: 'table'
+  displayName: 'Scan Docker image for vulnerabilities (SCA)'
+
+# 9️⃣ Docker: Build and push image to Docker Hub
 - task: Docker@2
   inputs:
     containerRegistry: 'DockerServiceConnection'  # This matches your service connection name
@@ -39,5 +54,5 @@ steps:
     tags: '1.0'
   displayName: 'Build and push Docker image'
 
-# 5️⃣ Optional: Deploy to Azure Container Instances or Web App for Containers
+# Optional: Deploy to Azure Container Instances or Web App for Containers
 # You can add deployment steps here, e.g., using AzureCLI@2 or AzureWebApp@1
