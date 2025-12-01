@@ -1,0 +1,43 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+# Trigger pipeline on pushes to main branch
+trigger:
+- main
+
+# Define agent pool
+pool:
+  vmImage: ubuntu-latest
+
+# Steps
+steps:
+
+# 1️⃣ Install .NET 10 SDK
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '10.0.x'  # Use .NET 10 SDK
+  displayName: 'Install .NET 10 SDK'
+
+# 2️⃣ Restore NuGet packages
+- script: dotnet restore SecurePizzaAPI.csproj
+  displayName: 'Restore NuGet packages'
+
+# 3️⃣ Build the main project
+- script: dotnet build SecurePizzaAPI.csproj --configuration Release
+  displayName: 'Build main project'
+
+# 4️⃣ Docker: Build and push image
+- task: Docker@2
+  inputs:
+    containerRegistry: 'DockerServiceConnection'  # This matches your service connection name
+    repository: 'ottowski/securepizzaapi'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: '1.0'
+  displayName: 'Build and push Docker image'
+
+# 5️⃣ Optional: Deploy to Azure Container Instances or Web App for Containers
+# You can add deployment steps here, e.g., using AzureCLI@2 or AzureWebApp@1
