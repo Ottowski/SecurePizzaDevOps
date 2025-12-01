@@ -2,11 +2,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
-# Kopiera csproj och restore dependencies
+# copy csproj and restore dependencies
 COPY ["SecurePizzaAPI.csproj", "./"]
 RUN dotnet restore "SecurePizzaAPI.csproj"
 
-# Kopiera all kod och builda
+# copy all kod and build
 COPY . .
 RUN dotnet publish -c Release -o /app/publish
 
@@ -17,3 +17,4 @@ COPY --from=build /app/publish .
 ENV ASPNETCORE_URLS=http://+:80
 EXPOSE 80
 ENTRYPOINT ["dotnet", "SecurePizzaAPI.dll"]
+# run in http://localhost:8080/index.html

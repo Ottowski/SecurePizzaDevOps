@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\ottoa\\OneDrive\\Skrivbord\\SecurePizzaAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0A51D1AC-39D5-D174-F3A6-181364A7AEB7}|SecurePizzaAPI\\SecurePizzaAPI.csproj|c:\\users\\ottoa\\onedrive\\skrivbord\\securepizzaapi\\securepizzaapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0A51D1AC-39D5-D174-F3A6-181364A7AEB7}|SecurePizzaAPI\\SecurePizzaAPI.csproj|solutionrelative:securepizzaapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0A51D1AC-39D5-D174-F3A6-181364A7AEB7}|SecurePizzaAPI\\SecurePizzaAPI.csproj|c:\\users\\ottoa\\onedrive\\skrivbord\\securepizzaapi\\securepizzaapi\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A51D1AC-39D5-D174-F3A6-181364A7AEB7}|SecurePizzaAPI\\SecurePizzaAPI.csproj|solutionrelative:securepizzaapi\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{56F4E322-6F45-41C8-2B42-2D9A1F50DAF1}|SecurePizzaAPI.Tests\\SecurePizzaAPI.Tests.csproj|c:\\users\\ottoa\\onedrive\\skrivbord\\securepizzaapi\\securepizzaapi.tests\\pizza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56F4E322-6F45-41C8-2B42-2D9A1F50DAF1}|SecurePizzaAPI.Tests\\SecurePizzaAPI.Tests.csproj|solutionrelative:securepizzaapi.tests\\pizza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A51D1AC-39D5-D174-F3A6-181364A7AEB7}|SecurePizzaAPI\\SecurePizzaAPI.csproj|c:\\users\\ottoa\\onedrive\\skrivbord\\securepizzaapi\\securepizzaapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{0A51D1AC-39D5-D174-F3A6-181364A7AEB7}|SecurePizzaAPI\\SecurePizzaAPI.csproj|solutionrelative:securepizzaapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0A51D1AC-39D5-D174-F3A6-181364A7AEB7}|SecurePizzaAPI\\SecurePizzaAPI.csproj|c:\\users\\ottoa\\onedrive\\skrivbord\\securepizzaapi\\securepizzaapi\\securepizzaapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -46,17 +46,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\ottoa\\OneDrive\\Skrivbord\\SecurePizzaAPI\\SecurePizzaAPI\\Dockerfile",
               "RelativeDocumentMoniker": "SecurePizzaAPI\\Dockerfile",
               "ToolTip": "C:\\Users\\ottoa\\OneDrive\\Skrivbord\\SecurePizzaAPI\\SecurePizzaAPI\\Dockerfile",
               "RelativeToolTip": "SecurePizzaAPI\\Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-12-01T04:38:58.851Z",
               "EditorCaption": ""
@@ -71,12 +71,11 @@
               "RelativeToolTip": "SecurePizzaAPI\\SecurePizzaAPI.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-01T03:50:46.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T03:50:46.183Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Pizza.cs",
               "DocumentMoniker": "C:\\Users\\ottoa\\OneDrive\\Skrivbord\\SecurePizzaAPI\\SecurePizzaAPI.Tests\\Pizza.cs",
               "RelativeDocumentMoniker": "SecurePizzaAPI.Tests\\Pizza.cs",
@@ -84,12 +83,11 @@
               "RelativeToolTip": "SecurePizzaAPI.Tests\\Pizza.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T03:07:11.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T03:07:11.288Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\ottoa\\OneDrive\\Skrivbord\\SecurePizzaAPI\\SecurePizzaAPI\\Models\\Order.cs",
               "RelativeDocumentMoniker": "SecurePizzaAPI\\Models\\Order.cs",
@@ -97,12 +95,11 @@
               "RelativeToolTip": "SecurePizzaAPI\\Models\\Order.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T02:21:13.346Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T02:21:13.346Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ottoa\\OneDrive\\Skrivbord\\SecurePizzaAPI\\SecurePizzaAPI\\Program.cs",
               "RelativeDocumentMoniker": "SecurePizzaAPI\\Program.cs",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "SecurePizzaAPI\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T02:17:13.167Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T02:17:13.167Z"
             },
             {
               "$type": "Document",
