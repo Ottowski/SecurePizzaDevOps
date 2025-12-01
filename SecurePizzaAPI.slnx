@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SecurePizzaAPI.Tests/SecurePizzaAPI.Tests.csproj" />
+  <Project Path="SecurePizzaAPI/SecurePizzaAPI.csproj" />
+</Solution>

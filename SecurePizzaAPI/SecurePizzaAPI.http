@@ -1,0 +1,13 @@
+@SecurePizzaAPI_HostAddress = http://localhost:5070
+
+# Testa GET /pizza
+GET {{SecurePizzaAPI_HostAddress}}/pizza
+Accept: application/json
+
+# Testa POST /pizza
+POST {{SecurePizzaAPI_HostAddress}}/pizza
+Content-Type: application/json
+
+{
+  "name": "Margherita"
+}
