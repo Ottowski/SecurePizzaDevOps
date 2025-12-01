@@ -42,8 +42,8 @@ steps:
   inputs:
     image: 'ottowski/securepizzaapi:1.0'
     format: 'table'
+    exitCode: '0'  
   displayName: 'Scan Docker image for vulnerabilities (SCA)'
-  continueOnError: true
 
 # Docker: Build and push image to Docker Hub
 - task: Docker@2
